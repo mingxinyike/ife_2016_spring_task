@@ -1,0 +1,53 @@
+$rowMarginB: 20px;
+$colColor: #FFDCDC;
+$colBorder: rgba(86,61,124,.2);
+
+@mixin generateGrid($tag) {
+	@for $i from 1 through 12 {
+		.col-#{$tag}-#{$i} {
+			width: (100% / 12 * $i);
+		}
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font: 16px "Microsoft YaHei";
+}
+
+body {
+	width: 100%;
+
+	.container {
+		margin: 0 20px;
+
+		.row {
+			margin-bottom: $rowMarginB;
+
+			[class*='col-'] {
+				float: left;
+				min-height: 1px;
+				padding: 12px;
+				background-color: $colColor;
+				border: 1px solid $colBorder;
+				box-sizing: border-box;
+			}
+		}
+		.row:before,
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+@media (min-width: 769px) {
+	@include generateGrid("md");
+}
+
+@media (max-width: 769px) {
+	@include generateGrid("sm");
+
+}

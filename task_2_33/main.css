@@ -6,31 +6,38 @@
   width: 462px;
   margin: 20px auto; }
 
-.chessboard {
+#chessboard {
   width: 100%;
   text-align: center;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap; }
-  .chessboard .box,
-  .chessboard .axis {
+  #chessboard .box,
+  #chessboard .axis {
     width: 42px;
     height: 42px;
     line-height: 42px;
     flex: 0 1 auto;
-    display: inline-box; }
-  .chessboard .box {
+    display: inline-block;
+    box-sizing: border-box; }
+  #chessboard .box {
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc; }
-  .chessboard #chess {
+  #chessboard .box:nth-of-type(11n) {
+    border-right: 1px solid #ccc; }
+  #chessboard .box:nth-child(n+111) {
+    border-bottom: 1px solid #ccc; }
+  #chessboard #chess {
     position: absolute;
-    top: 126px;
-    left: 42px;
+    width: 42px;
+    height: 42px;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
     background: blue;
-    border-top: 3px solid red; }
+    border-top: 8px solid red; }
 
 .order {
   text-align: center;

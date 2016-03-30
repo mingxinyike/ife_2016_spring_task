@@ -1,0 +1,58 @@
+$boxWidth: 42px;
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	width: $boxWidth*11;
+	margin: 20px auto;
+}
+
+#chessboard {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	.box,
+	.axis {
+		width: $boxWidth;
+		height: $boxWidth;
+		line-height: $boxWidth;
+		flex: 0 1 auto;
+		display: inline-block;
+		box-sizing: border-box;
+	}
+	.box {
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+	}
+	.box:nth-of-type(11n) {
+		border-right: 1px solid #ccc;
+	}
+	.box:nth-child(n+111) {
+		border-bottom: 1px solid #ccc;
+	}
+	#chess {
+		position: absolute;
+		width: $boxWidth;
+		height: $boxWidth;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		background: blue;
+		border-top: 8px solid red;
+	}
+
+}
+
+.order {
+	text-align: center;
+	width: 400px;
+	margin: 20px auto;
+}

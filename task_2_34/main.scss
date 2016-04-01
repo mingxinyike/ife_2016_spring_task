@@ -4,12 +4,12 @@ $boxWidth: 42px;
 	padding: 0;
 	margin: 0;
 }
-
+// 整体样式
 .container {
 	width: $boxWidth*11;
 	margin: 20px auto;
 }
-
+// 棋盘样式
 #chessboard {
 	width: 100%;
 	text-align: center;
@@ -19,6 +19,7 @@ $boxWidth: 42px;
 	justify-content: space-around;
 	flex-wrap: wrap;
 
+	// 格子和横纵坐标样式
 	.box,
 	.axis {
 		width: $boxWidth;
@@ -32,12 +33,15 @@ $boxWidth: 42px;
 		border-top: 1px solid #ccc;
 		border-left: 1px solid #ccc;
 	}
+	// 最右一排添加右边框
 	.box:nth-of-type(11n) {
 		border-right: 1px solid #ccc;
 	}
+	// 最后一排添加下边框
 	.box:nth-child(n+111) {
 		border-bottom: 1px solid #ccc;
 	}
+	// 移动的小方块
 	#chess {
 		position: absolute;
 		width: $boxWidth;
@@ -48,13 +52,14 @@ $boxWidth: 42px;
 		background: blue;
 		border-top: 8px solid red;
 	}
+	// 给移动的小方块添加动画效果
 	#chess.slow {
 		transition-property: transform,top,left;
 		transition-duration: 1s;
 	}
 
 }
-
+// 指令input & 提交
 .order {
 	text-align: center;
 	width: 400px;

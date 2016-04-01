@@ -5,11 +5,11 @@ var gulp = require('gulp'),
 
 
 gulp.task('sass', function () {
-    return sass('./task_2_33/main.scss')
+    return sass('./task_2_34/main.scss')
         .on('error', function (err) {
             console.error('Error!', err.message);
         })
-        .pipe(gulp.dest('./task_2_33'));
+        .pipe(gulp.dest('./task_2_34'));
 });
 
 gulp.task('connect', function() {
@@ -17,7 +17,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch',function() {
-    gulp.watch('./task_2_33/*.scss', function(){
+    gulp.watch('./task_2_34/*.scss', function(){
         gulp.run('sass');
     });
 })
